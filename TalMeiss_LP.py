@@ -5,7 +5,7 @@ import math
 from gurobipy import *
 
 
-def SolveLP(v,r):
+def SolveLP(v,r, lam):
 
 	#Assumes v includes the no purchase option
 	n = len(v)-1
@@ -25,7 +25,7 @@ def SolveLP(v,r):
 			revS=0
 			for j in assort:
 
-				revS+=PurchaseProbMNL(v,S,j)]*r[j]
+				revS+=lam[g]*PurchaseProbMNL(v,S,j)]*r[j]
 		
 			h[g,key]=m.addVar(0,1,-revS,  GRB.CONTINUOUS,"h_%d%d" %(g,key))
 
