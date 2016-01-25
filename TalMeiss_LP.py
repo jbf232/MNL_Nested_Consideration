@@ -5,7 +5,7 @@ import math
 from gurobipy import *
 
 
-def SolveLP(v,r, lam):
+def SolveLP(v,r,lam):
 
 	#Assumes v includes the no purchase option
 	n = len(v)-1

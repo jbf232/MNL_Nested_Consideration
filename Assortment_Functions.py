@@ -15,6 +15,15 @@ def getAssortments(g):
 
 	return assortDict
 
+def customerAssortDict(n):
+
+	fullDict = {}
+	for g in range(1, n+1):
+		assortDict = getAssortments(g)
+		fullDict[g] =assortDict
+
+	return fullDict 
+
 #Function that returns all assortment numbers for a customer types that have a product
 def getAssortmentKeys(assortDict, j):
 
