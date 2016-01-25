@@ -36,6 +36,16 @@ def getAssortmentKeys(assortDict, j):
 
 	return listKeys
 
+def getAssortmentKeysTwo(assortDict, twoProds):
+
+	listKeys = []
+	for key in assortDict:
+
+		assort = assortDict[key]
+		if twoProds[0] in assort and twoProds[1] in assort:
+			listKeys+=[key]
+
+	return listKeys
 
 
 
