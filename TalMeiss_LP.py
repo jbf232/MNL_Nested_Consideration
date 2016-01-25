@@ -44,9 +44,9 @@ def SolveLP(v,r, lam):
 			gList=getAssortmentKeys(assortDict, j)
 			for h in range(j, n+1):
 				if h != g:
-				assortDict=fullAssortDict[h]
-				hList=getAssortmentKeys(assortDict, j)
-				m.addConstr(LinExpr([1 for i in range(len(gList))] + [-1 for i in range(len(hList))],\
+					assortDict=fullAssortDict[h]
+					hList=getAssortmentKeys(assortDict, j)
+					m.addConstr(LinExpr([1 for i in range(len(gList))] + [-1 for i in range(len(hList))],\
 					[h[g,assortNum] for assortNum in gList] + [h[h,assortNum] for assortNum in hList]),GRB.EQUAL,0)
 
 
